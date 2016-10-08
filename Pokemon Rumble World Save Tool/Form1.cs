@@ -78,7 +78,7 @@ namespace Pokemon_Rumble_World_Save_Tool
             CB_Move1.SelectedValue = (int)BitConverter.ToUInt16(data, 0x12);
             CB_Move2.SelectedValue = (int)BitConverter.ToUInt16(data, 0x14);
             CB_Trait.SelectedValue = (int)data[0x18];
-            NUP_Trait.Value = (traitvals & 0x7); // & 00000111
+            NUP_Trait.Value = (traitvals & 0x1F); // & 00011111
             int species = ((int)CB_Species.SelectedValue >> 1) & 0x3FF;
             int form = ((int)CB_Species.SelectedValue >> 11);
             CHK_MEvo.Visible = CHK_MEvo.Enabled = megaEvos.Contains(species);
